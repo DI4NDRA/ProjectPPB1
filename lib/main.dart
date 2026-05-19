@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
       ),
       debugShowCheckedModeBanner: false,
-      home: Project1(),
+      home: Beranda(),
     );
   }
 }
@@ -75,11 +75,40 @@ class Project1 extends StatelessWidget{
             icon: Badge(child: Icon(Icons.notifications_sharp)),
             label: 'Notifications',
           ),
-          NavigationDestination(
-            icon: Badge(label: Text('2'), child: Icon(Icons.messenger_sharp)),
-            label: 'Messages',
-          ),
         ],
+      ),
+    );
+  }
+}
+
+class Beranda extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Project1(),));
+            }, child: Text('Project 1'),
+              style: ButtonStyle(backgroundColor:WidgetStatePropertyAll(Colors.lightBlueAccent),
+                  foregroundColor: WidgetStatePropertyAll(Colors.black),
+                  fixedSize: WidgetStatePropertyAll(Size(150,50))),),
+            Padding(padding: EdgeInsetsGeometry.all(25)),
+            ElevatedButton(onPressed: (){}, child: Text('Project 2'), 
+              style: ButtonStyle(backgroundColor:WidgetStatePropertyAll(Colors.lightBlueAccent),
+                  foregroundColor: WidgetStatePropertyAll(Colors.black),
+                  fixedSize: WidgetStatePropertyAll(Size(150,50))) ,),
+            Padding(padding: EdgeInsetsGeometry.all(25)),
+            ElevatedButton(onPressed: (){}, child: Text('Project 3'), 
+              style: ButtonStyle(backgroundColor:WidgetStatePropertyAll(Colors.lightBlueAccent),
+                  foregroundColor: WidgetStatePropertyAll(Colors.black),
+                  fixedSize: WidgetStatePropertyAll(Size(150,50))) ,),
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sib6b_dndraa/sisum/page/mainpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
       ),
       debugShowCheckedModeBanner: false,
-      home: Beranda(),
+      home: UnivPage(),
     );
   }
 }
